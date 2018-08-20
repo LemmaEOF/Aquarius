@@ -13,4 +13,4 @@ Aquarius adds even more content and additions to the Update Aquatic. Currently p
 
 - Flippers - give you Dolphin's Grace while equipped, letting you swim faster.
 
-- Channeling II and III - Channeling 2 lets you strike entities with lightning even when it's not raining, and Channeling 3 lets you strike anywhere with lightning any time.
+- Channeling II and III - Channeling 2 lets you strike entities with lightning when it's raining or thunderstorming, and Channeling 3 lets you strike entities any time.

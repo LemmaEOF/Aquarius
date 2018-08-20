@@ -11,6 +11,7 @@ import net.minecraft.entity.projectile.EntityTrident;
 import net.minecraft.init.Enchantments;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
@@ -37,12 +38,12 @@ public abstract class MixinEntityTrident extends EntityArrow {
         return EnchantmentHelper.getEnchantmentLevel(Enchantments.CHANNELING, stack);
     }
 
-    @Inject(method = "onHitEntity(Lnet/minecraft/util/math/RayTraceResult;)V",
-            at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;isThundering()Z"),
+    @Inject(method = "b",
+            at = @At(value = "INVOKE", target = "Laxs;X()Z"),
             cancellable = true,
             locals = LocalCapture.CAPTURE_FAILEXCEPTION,
             remap = false)
-    public void onHitEntity(RayTraceResult ray, CallbackInfo ci, Entity lvt_2_1_, SoundEvent lvt_5_1_, float lvt_6_2_) {
+    public void onHitEntity(RayTraceResult p_onHitEntity_1_, CallbackInfo ci, Entity lvt_2_1_, float lvt_3_1_, DamageSource lvt_4_2_, SoundEvent lvt_5_1_, float lvt_6_2_) {
         if ((this.world.isThundering() && EnchantmentHelper.func_203192_h(this.thrownStack)) || (this.world.isRaining() && getChannelingLevel(thrownStack) >= 2) || getChannelingLevel(thrownStack) == 3) {
             BlockPos entityPos = lvt_2_1_.getPosition();
             if (this.world.canSeeSky(entityPos)) {

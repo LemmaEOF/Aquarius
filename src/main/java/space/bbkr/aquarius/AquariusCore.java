@@ -8,6 +8,6 @@ public class AquariusCore implements InitializationListener {
     @Override
     public void onInitialization() {
         MixinBootstrap.init();
-        Mixins.addConfiguration("mixins.pgeg.json");
+        Mixins.addConfiguration("mixins.aquarius.json");
     }
 }
