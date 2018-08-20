@@ -7,6 +7,7 @@
   "refmap": "mixins.aquarius.refmap.json",
   "mixins": [
     "MixinChanneling",
-    "MixinEntityTrident"
+    "MixinEntityTrident",
+    "MixinFlippers"
   ]
 }

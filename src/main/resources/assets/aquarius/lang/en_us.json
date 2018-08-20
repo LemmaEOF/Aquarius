@@ -1,5 +1,3 @@
 {
-  "block.zeropoint.generator": "Basic Generator",
-  "tooltip.zeropoint.generator": "§7Rough reference implementation",
-  "msg.zeropoint.energy": "Currently stored: %s/64000 ZP"
+  "item.aquarius.flippers": "Flippers"
 }

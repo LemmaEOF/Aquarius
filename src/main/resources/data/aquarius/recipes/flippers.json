@@ -1,11 +1,11 @@
 {
   "type": "crafting_shaped",
   "pattern": [
-    "l l",
-    "s s"
+    "s s",
+    "l l"
   ],
   "key": {
-    "k": {
+    "l": {
       "item": "minecraft:leather"
     },
     "s": {
