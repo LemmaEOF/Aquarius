@@ -1,0 +1,11 @@
+{
+  "id": "aquarius",
+  "name": "Aquarius",
+  "version": "1.0",
+  "authors": [
+    "b0undarybreaker"
+  ],
+  "listeners": [
+    "space.bbkr.aquarius.Aquarius"
+  ]
+}
