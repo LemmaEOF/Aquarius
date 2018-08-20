@@ -6,6 +6,7 @@
     "b0undarybreaker"
   ],
   "listeners": [
-    "space.bbkr.aquarius.Aquarius"
+    "space.bbkr.aquarius.Aquarius",
+    "space.bbkr.aquarius.AquariusCore"
   ]
 }
