@@ -26,8 +26,8 @@ public abstract class MixinFlippers extends EntityLivingBase {
     private void updateTurtleHelmet(CallbackInfo ci) {
         ItemStack stackFeet = this.getItemStackFromSlot(EntityEquipmentSlot.FEET);
         if (stackFeet.getItem() == Aquarius.FLIPPERS) {
-            if (this.areEyesInFluid(FluidTags.WATER)) this.addPotionEffect(new PotionEffect(MobEffects.DOLPHINS_GRACE, 200, 0, false, false, true));
-            else if (this.areEyesInFluid(FluidTags.WATER)) this.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 200, 1, false, false, true));
+            if (this.areEyesInFluid(FluidTags.WATER)) this.addPotionEffect(new PotionEffect(MobEffects.DOLPHINS_GRACE, 20));
+            else this.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 20));
         }
     }
 }
