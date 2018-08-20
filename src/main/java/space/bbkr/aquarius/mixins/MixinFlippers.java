@@ -7,7 +7,6 @@ import net.minecraft.init.MobEffects;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
-import net.minecraft.tags.FluidTags;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -26,8 +25,8 @@ public abstract class MixinFlippers extends EntityLivingBase {
     private void updateTurtleHelmet(CallbackInfo ci) {
         ItemStack stackFeet = this.getItemStackFromSlot(EntityEquipmentSlot.FEET);
         if (stackFeet.getItem() == Aquarius.FLIPPERS) {
-            if (this.areEyesInFluid(FluidTags.WATER)) this.addPotionEffect(new PotionEffect(MobEffects.DOLPHINS_GRACE, 20));
-            else this.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 20));
+            if (this.isInWater()) this.addPotionEffect(new PotionEffect(MobEffects.DOLPHINS_GRACE, 20, 0, true, false, true));
+            else this.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 20, 0, true, false, true));
         }
     }
 }
