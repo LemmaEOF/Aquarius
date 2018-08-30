@@ -8,6 +8,7 @@
   "mixins": [
     "MixinChanneling",
     "MixinEntityTrident",
-    "MixinFlippers"
+    "MixinFlippers",
+    "MixinTridentRepair"
   ]
 }
