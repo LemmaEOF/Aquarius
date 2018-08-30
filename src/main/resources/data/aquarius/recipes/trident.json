@@ -1,13 +1,13 @@
 {
   "type": "crafting_shaped",
   "pattern": [
-    " ii",
-    " ri",
+    " qq",
+    " rq",
     "r  "
   ],
   "key": {
-    "i": {
-      "item": "minecraft:iron_ingot"
+    "q": {
+      "item": "minecraft:quartz"
     },
     "r": {
       "item": "aquarius:prismarine_rod"
