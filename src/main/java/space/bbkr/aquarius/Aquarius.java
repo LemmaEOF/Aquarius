@@ -12,7 +12,7 @@ public class Aquarius implements ItemAdder {
 
     @Override
     public void registerItems() {
-        Item.registerItem(new ResourceLocation("aquarius:flippers"), FLIPPERS);
-        Item.registerItem(new ResourceLocation("aquarius:prismarine_rod"), PRISMARINE_ROD);
+        Item.register(new ResourceLocation("aquarius:flippers"), FLIPPERS);
+        Item.register(new ResourceLocation("aquarius:prismarine_rod"), PRISMARINE_ROD);
     }
 }

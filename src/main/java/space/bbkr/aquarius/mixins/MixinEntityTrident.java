@@ -38,13 +38,13 @@ public abstract class MixinEntityTrident extends EntityArrow {
         return EnchantmentHelper.getEnchantmentLevel(Enchantments.CHANNELING, stack);
     }
 
-    @Inject(method = "b",
-            at = @At(value = "INVOKE", target = "Laxs;X()Z"),
+    @Inject(method = "onHitEntity",
+            at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;isThundering()Z"),
             cancellable = true,
             locals = LocalCapture.CAPTURE_FAILEXCEPTION,
             remap = false)
     public void onHitEntity(RayTraceResult p_onHitEntity_1_, CallbackInfo ci, Entity lvt_2_1_, float lvt_3_1_, DamageSource lvt_4_2_, SoundEvent lvt_5_1_, float lvt_6_2_) {
-        if ((this.world.isThundering() && EnchantmentHelper.func_203192_h(this.thrownStack)) || (this.world.isRaining() && getChannelingLevel(thrownStack) >= 2) || getChannelingLevel(thrownStack) == 3) {
+        if ((this.world.isThundering() && EnchantmentHelper.hasChannelingEnchantment(this.thrownStack)) || (this.world.isRaining() && getChannelingLevel(thrownStack) >= 2) || getChannelingLevel(thrownStack) == 3) {
             BlockPos entityPos = lvt_2_1_.getPosition();
             if (this.world.canSeeSky(entityPos)) {
                 EntityLightningBolt lightning = new EntityLightningBolt(this.world, (double)entityPos.getX(), (double)entityPos.getY(), (double)entityPos.getZ(), false);
