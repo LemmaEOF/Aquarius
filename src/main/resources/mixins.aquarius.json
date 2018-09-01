@@ -9,6 +9,9 @@
     "MixinChanneling",
     "MixinEntityTrident",
     "MixinFlippers",
-    "MixinTridentRepair"
+    "MixinTridentRepair",
+    "MixinEntityTracker",
+    "MixinEntityTrackerEntry",
+    "MixinNetHandlerPlayClient"
   ]
 }
