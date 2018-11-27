@@ -22,8 +22,8 @@ public abstract class MixinSwimming extends EntityLivingBase {
 
     @Shadow public abstract boolean isSwimming();
 
-    public MixinSwimming(EntityType<?> p_i48577_1_, World p_i48577_2_) {
-        super(p_i48577_1_, p_i48577_2_);
+    public MixinSwimming(EntityType<?> type, World world) {
+        super(type, world);
     }
 
     @Inject(method = "updateTurtleHelmet", at = @At("HEAD"))
