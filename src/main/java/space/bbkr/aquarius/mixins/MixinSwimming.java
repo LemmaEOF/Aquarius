@@ -18,13 +18,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import space.bbkr.aquarius.Aquarius;
 
 @Mixin(EntityPlayer.class)
-public abstract class MixinFlippers extends EntityLivingBase {
-
-    private boolean wasLastAirSwimming = false;
+public abstract class MixinSwimming extends EntityLivingBase {
 
     @Shadow public abstract boolean isSwimming();
 
-    public MixinFlippers(EntityType<?> p_i48577_1_, World p_i48577_2_) {
+    public MixinSwimming(EntityType<?> p_i48577_1_, World p_i48577_2_) {
         super(p_i48577_1_, p_i48577_2_);
     }
 
@@ -37,21 +35,22 @@ public abstract class MixinFlippers extends EntityLivingBase {
         }
     }
 
+    @Override
+    public boolean canSwim() {
+        return (this.eyesInWater && this.isInWater()) || this.isPotionActive(Aquarius.AIR_SWIMMER);
+    }
+
     @Inject(method = "updateSwimming", at = @At("TAIL"))
     public void updateAirSwimming(CallbackInfo ci) {
         if (this.isPotionActive(Aquarius.AIR_SWIMMER)) {
-            this.setSwimming((this.isSprinting() || this.wasLastAirSwimming) && !this.isRiding() && !this.isSneaking());
-            this.wasLastAirSwimming = (this.isSwimming());
+            this.setSwimming(this.isSprinting() && !this.isRiding());
             this.inWater = this.isSwimming();
             if (this.isSwimming()) {
                 this.fallDistance = 0.0F;
                 Vec3d look = this.getLookVec();
-                //TODO: figure out how to get this to only happen when there's key input
                 move(MoverType.SELF, look.x/4, look.y/4, look.z/4);
             }
         }
     }
-
-
 
 }
