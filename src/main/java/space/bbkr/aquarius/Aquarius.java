@@ -20,8 +20,7 @@ public class Aquarius implements ItemAdder, EntityTypeAdder, MobEffectAdder {
     public static final Item PRISMARINE_ROD = new Item(new Item.Builder().group(ItemGroup.MISC));
     public static final Item HOOKSHOT = new ItemHookshot(new Item.Builder().group(ItemGroup.TOOLS));
     public static EntityType HOOKSHOT_ENTITY;
-    public static Potion AIR_SWIMMER = new AquariusPotion(false, 0x1dd186);
-    public static Tag<Fluid> EMPTY_FLUID = new FluidTags.Wrapper(new ResourceLocation("aquarius:air"));
+    public static Potion AIR_SWIMMER = new AquariusPotion(false, 0x1dd186).setIcon(9, 0).setBeneficial();
 
     @Override
     public void registerItems() {
