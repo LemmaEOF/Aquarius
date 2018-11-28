@@ -41,7 +41,7 @@ public class Aquarius implements BlockAdder, ItemAdder, EntityTypeAdder, MobEffe
         Item.register(new ResourceLocation("aquarius:flippers"), FLIPPERS);
         Item.register(new ResourceLocation("aquarius:prismarine_rod"), PRISMARINE_ROD);
         //Item.register(new ResourceLocation("aquarius:hookshot"), HOOKSHOT);
-        Item.register(CHORUS_CONDUIT, ItemGroup.DECORATIONS);
+        Item.register(CHORUS_CONDUIT, ItemGroup.MISC);
     }
 
     @Override
