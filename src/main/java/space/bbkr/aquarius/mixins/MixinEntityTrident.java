@@ -38,7 +38,7 @@ public abstract class MixinEntityTrident extends EntityArrow {
         return EnchantmentHelper.getEnchantmentLevel(Enchantments.CHANNELING, stack);
     }
 
-    @Inject(method = "onHitEntity",
+    @Inject(method = "b",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;isThundering()Z"),
             cancellable = true,
             locals = LocalCapture.CAPTURE_FAILEXCEPTION,
