@@ -1,12 +1,12 @@
 buildscript {
     repositories {
         jcenter()
-        mavenLocal()
+        maven { url 'https://www.jitpack.io' }
         maven { url 'http://repo.spongepowered.org/maven' }
         maven { url 'http://files.minecraftforge.net/maven' }
     }
     dependencies {
-        classpath 'org.dimdev:ForgeGradle:2.3-SNAPSHOT'
+        classpath 'com.github.Chocohead:ForgeGradle:moderniser-SNAPSHOT'
         classpath 'org.spongepowered:mixingradle:0.6-SNAPSHOT'
     }
 }
@@ -31,7 +31,11 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.chocohead:rift:v1.0.4-77'
+    implementation 'com.github.Chocohead:Rift:f76cf44d887d290782590c99770876393c924333:dev'
+    implementation 'org.jetbrains:annotations:15.0'
+    implementation 'org.jetbrains:annotations:15.0'
+    implementation 'org.jetbrains:annotations:15.0'
+    implementation 'org.jetbrains:annotations:15.0'
 }
 
 mixin {
@@ -41,7 +45,7 @@ mixin {
 
 minecraft {
     version = '1.13.2'
-    mappings = 'snapshot_20180826'
+    mappings = 'snapshot_20181120'
     runDir = 'run'
     tweakClass = 'org.dimdev.riftloader.launch.RiftLoaderTweaker'
 }

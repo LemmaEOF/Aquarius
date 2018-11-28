@@ -14,7 +14,7 @@ import net.minecraft.world.World;
 
 public class ItemHookshot extends Item {
 
-    public ItemHookshot(Builder builder) {
+    public ItemHookshot(Properties builder) {
         super(builder);
     }
 
@@ -34,7 +34,7 @@ public class ItemHookshot extends Item {
                 if (!world.isRemote) {
                     EntityHookshot hook = new EntityHookshot(world, player, stack);
                     hook.shoot(player, player.rotationPitch, player.rotationYaw, 0.0F, 2.5F + 0f * 0.5F, 1.0F);
-                    if (player.capabilities.isCreativeMode) {
+                    if (player.abilities.isCreativeMode) {
                         hook.pickupStatus = EntityArrow.PickupStatus.CREATIVE_ONLY;
                     }
 

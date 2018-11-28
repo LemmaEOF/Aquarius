@@ -43,7 +43,7 @@ public abstract class MixinSwimming extends EntityLivingBase {
     @Inject(method = "updateSwimming", at = @At("TAIL"))
     public void updateAirSwimming(CallbackInfo ci) {
         if (this.isPotionActive(Aquarius.AIR_SWIMMER)) {
-            this.setSwimming(this.isSprinting() && !this.isRiding());
+            this.setSwimming(this.isSprinting() && !this.isPassenger());
             this.inWater = this.isSwimming();
             if (this.isSwimming()) {
                 this.fallDistance = 0.0F;

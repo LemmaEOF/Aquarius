@@ -33,8 +33,8 @@ public class RenderChorusConduit extends TileEntityRenderer<TileEntityChorusCond
             rotPoint = conduit.drawTESR(0.0F);
             this.bindTexture(baseTex);
             GlStateManager.pushMatrix();
-            GlStateManager.translate((float)x + 0.5F, (float)y + 0.5F, (float)z + 0.5F);
-            GlStateManager.rotate(rotPoint, 0.0F, 1.0F, 0.0F);
+            GlStateManager.translatef((float)x + 0.5F, (float)y + 0.5F, (float)z + 0.5F);
+            GlStateManager.rotatef(rotPoint, 0.0F, 1.0F, 0.0F);
             this.shellModel.render(null, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0625F);
             GlStateManager.popMatrix();
         } else if (conduit.isActive()) {
@@ -44,8 +44,8 @@ public class RenderChorusConduit extends TileEntityRenderer<TileEntityChorusCond
             this.bindTexture(cageTex);
             GlStateManager.disableCull();
             GlStateManager.pushMatrix();
-            GlStateManager.translate((float)x + 0.5F, (float)y + 0.3F + bobPoint * 0.2F, (float)z + 0.5F);
-            GlStateManager.rotate(rotPoint, 0.5F, 1.0F, 0.5F);
+            GlStateManager.translatef((float)x + 0.5F, (float)y + 0.3F + bobPoint * 0.2F, (float)z + 0.5F);
+            GlStateManager.rotatef(rotPoint, 0.5F, 1.0F, 0.5F);
             this.cageModel.render(null, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0625F);
             GlStateManager.popMatrix();
             int windFrame = conduit.ticksExisted / 3 % RenderChorusConduit.WindModel.windCount;
@@ -55,49 +55,49 @@ public class RenderChorusConduit extends TileEntityRenderer<TileEntityChorusCond
                 case 0:
                     this.bindTexture(windTex);
                     GlStateManager.pushMatrix();
-                    GlStateManager.translate((float)x + 0.5F, (float)y + 0.5F, (float)z + 0.5F);
+                    GlStateManager.translatef((float)x + 0.5F, (float)y + 0.5F, (float)z + 0.5F);
                     this.windModel.render(null, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0625F);
                     GlStateManager.popMatrix();
                     GlStateManager.pushMatrix();
-                    GlStateManager.translate((float)x + 0.5F, (float)y + 0.5F, (float)z + 0.5F);
-                    GlStateManager.scale(0.875F, 0.875F, 0.875F);
-                    GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
-                    GlStateManager.rotate(180.0F, 0.0F, 0.0F, 1.0F);
+                    GlStateManager.translatef((float)x + 0.5F, (float)y + 0.5F, (float)z + 0.5F);
+                    GlStateManager.scalef(0.875F, 0.875F, 0.875F);
+                    GlStateManager.rotatef(180.0F, 1.0F, 0.0F, 0.0F);
+                    GlStateManager.rotatef(180.0F, 0.0F, 0.0F, 1.0F);
                     this.windModel.render(null, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0625F);
                     GlStateManager.popMatrix();
                     break;
                 case 1:
                     this.bindTexture(verticalWindTex);
                     GlStateManager.pushMatrix();
-                    GlStateManager.translate((float)x + 0.5F, (float)y + 0.5F, (float)z + 0.5F);
-                    GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
+                    GlStateManager.translatef((float)x + 0.5F, (float)y + 0.5F, (float)z + 0.5F);
+                    GlStateManager.rotatef(90.0F, 1.0F, 0.0F, 0.0F);
                     this.windModel.render(null, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0625F);
                     GlStateManager.popMatrix();
                     GlStateManager.pushMatrix();
-                    GlStateManager.translate((float)x + 0.5F, (float)y + 0.5F, (float)z + 0.5F);
-                    GlStateManager.scale(0.875F, 0.875F, 0.875F);
-                    GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
-                    GlStateManager.rotate(180.0F, 0.0F, 0.0F, 1.0F);
+                    GlStateManager.translatef((float)x + 0.5F, (float)y + 0.5F, (float)z + 0.5F);
+                    GlStateManager.scalef(0.875F, 0.875F, 0.875F);
+                    GlStateManager.rotatef(180.0F, 1.0F, 0.0F, 0.0F);
+                    GlStateManager.rotatef(180.0F, 0.0F, 0.0F, 1.0F);
                     this.windModel.render(null, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0625F);
                     GlStateManager.popMatrix();
                     break;
                 case 2:
                     this.bindTexture(windTex);
                     GlStateManager.pushMatrix();
-                    GlStateManager.translate((float)x + 0.5F, (float)y + 0.5F, (float)z + 0.5F);
-                    GlStateManager.rotate(90.0F, 0.0F, 0.0F, 1.0F);
+                    GlStateManager.translatef((float)x + 0.5F, (float)y + 0.5F, (float)z + 0.5F);
+                    GlStateManager.rotatef(90.0F, 0.0F, 0.0F, 1.0F);
                     this.windModel.render(null, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0625F);
                     GlStateManager.popMatrix();
                     GlStateManager.pushMatrix();
-                    GlStateManager.translate((float)x + 0.5F, (float)y + 0.5F, (float)z + 0.5F);
-                    GlStateManager.scale(0.875F, 0.875F, 0.875F);
-                    GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
-                    GlStateManager.rotate(180.0F, 0.0F, 0.0F, 1.0F);
+                    GlStateManager.translatef((float)x + 0.5F, (float)y + 0.5F, (float)z + 0.5F);
+                    GlStateManager.scalef(0.875F, 0.875F, 0.875F);
+                    GlStateManager.rotatef(180.0F, 1.0F, 0.0F, 0.0F);
+                    GlStateManager.rotatef(180.0F, 0.0F, 0.0F, 1.0F);
                     this.windModel.render(null, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0625F);
                     GlStateManager.popMatrix();
             }
 
-            Entity viewer = Minecraft.getMinecraft().getRenderViewEntity();
+            Entity viewer = Minecraft.getInstance().getRenderViewEntity();
             Vec2f look = Vec2f.ZERO;
             if (viewer != null) {
                 look = viewer.getPitchYaw();
@@ -110,11 +110,11 @@ public class RenderChorusConduit extends TileEntityRenderer<TileEntityChorusCond
             }
 
             GlStateManager.pushMatrix();
-            GlStateManager.translate((float)x + 0.5F, (float)y + 0.3F + bobPoint * 0.2F, (float)z + 0.5F);
-            GlStateManager.scale(0.5F, 0.5F, 0.5F);
-            GlStateManager.rotate(-look.y, 0.0F, 1.0F, 0.0F);
-            GlStateManager.rotate(look.x, 1.0F, 0.0F, 0.0F);
-            GlStateManager.rotate(180.0F, 0.0F, 0.0F, 1.0F);
+            GlStateManager.translatef((float)x + 0.5F, (float)y + 0.3F + bobPoint * 0.2F, (float)z + 0.5F);
+            GlStateManager.scalef(0.5F, 0.5F, 0.5F);
+            GlStateManager.rotatef(-look.y, 0.0F, 1.0F, 0.0F);
+            GlStateManager.rotatef(look.x, 1.0F, 0.0F, 0.0F);
+            GlStateManager.rotatef(180.0F, 0.0F, 0.0F, 1.0F);
             this.eyeModel.render(null, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.083333336F);
             GlStateManager.popMatrix();
         }

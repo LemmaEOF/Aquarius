@@ -11,7 +11,7 @@ import net.minecraft.world.IWorldReaderBase;
 
 public class BlockChorusConduit extends BlockConduit {
 
-    public BlockChorusConduit(Builder builder) {
+    public BlockChorusConduit(Properties builder) {
         super(builder);
     }
 

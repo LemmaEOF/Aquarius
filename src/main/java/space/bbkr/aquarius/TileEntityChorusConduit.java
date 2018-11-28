@@ -1,12 +1,12 @@
 package space.bbkr.aquarius;
 
 import com.google.common.collect.Lists;
+import com.sun.istack.internal.Nullable;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.MobEffects;
 import net.minecraft.init.Particles;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.potion.PotionEffect;
@@ -18,7 +18,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 
-import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;
 import java.util.UUID;
@@ -44,9 +43,9 @@ public class TileEntityChorusConduit extends TileEntityConduit implements ITicka
         this.purpurPositions = Lists.newArrayList();
     }
 
-    public void update() {
+    public void tick() {
         ++this.ticksExisted;
-        long time = this.world.getTotalWorldTime();
+        long time = this.world.getGameTime();
         if (time % 40L == 0L) {
             this.setActive(this.shouldBeActive());
             if (!this.world.isRemote && this.isActive()) {
@@ -174,7 +173,7 @@ public class TileEntityChorusConduit extends TileEntityConduit implements ITicka
                 float distZ = -0.5F + rand.nextFloat();
                 BlockPos relPos = pos.subtract(this.pos);
                 Vec3d lvt_10_1_ = (new Vec3d((double)distX, (double)distY, (double)distZ)).add((double)relPos.getX(), (double)relPos.getY(), (double)relPos.getZ());
-                this.world.spawnParticle(Particles.NAUTILUS, vec.x, vec.y, vec.z, lvt_10_1_.x, lvt_10_1_.y, lvt_10_1_.z);
+                this.world.addParticle(Particles.NAUTILUS, vec.x, vec.y, vec.z, lvt_10_1_.x, lvt_10_1_.y, lvt_10_1_.z);
             }
         }
 
@@ -184,7 +183,7 @@ public class TileEntityChorusConduit extends TileEntityConduit implements ITicka
             distX = -1.0F + rand.nextFloat() * this.target.height;
             distY = (-0.5F + rand.nextFloat()) * (3.0F + this.target.width);
             Vec3d velocity = new Vec3d((double)randVel, (double)distX, (double)distY);
-            this.world.spawnParticle(Particles.NAUTILUS, playerEyes.x, playerEyes.y, playerEyes.z, velocity.x, velocity.y, velocity.z);
+            this.world.addParticle(Particles.NAUTILUS, playerEyes.x, playerEyes.y, playerEyes.z, velocity.x, velocity.y, velocity.z);
         }
 
     }
