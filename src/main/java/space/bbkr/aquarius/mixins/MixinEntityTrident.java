@@ -38,7 +38,7 @@ public abstract class MixinEntityTrident extends EntityArrow {
         return EnchantmentHelper.getEnchantmentLevel(Enchantments.CHANNELING, stack);
     }
 
-    @Inject(method = "b",
+    @Inject(method = "b", // this needs to be a notch name because the refmap throws a fit if it isn't and that's not nice
             at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;isThundering()Z"),
             cancellable = true,
             locals = LocalCapture.CAPTURE_FAILEXCEPTION,
