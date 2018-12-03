@@ -38,8 +38,8 @@ public abstract class MixinEntityTrident extends EntityArrow {
         return EnchantmentHelper.getEnchantmentLevel(Enchantments.CHANNELING, stack);
     }
 
-    @Inject(method = "b", // this needs to be a notch name because the refmap throws a fit if it isn't and that's not nice
-            at = @At(value = "INVOKE", target = "Laxs;X()Z"), // seriously, what is mixin's problem with this one @Inject
+    @Inject(method = "onHitEntity", // this needs to be a notch name because the refmap throws a fit if it isn't and that's not nice
+            at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;isThundering()Z"), // seriously, what is mixin's problem with this one @Inject
             cancellable = true,
             locals = LocalCapture.CAPTURE_FAILEXCEPTION,
             remap = false)

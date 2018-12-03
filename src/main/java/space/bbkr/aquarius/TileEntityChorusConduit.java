@@ -127,7 +127,7 @@ public class TileEntityChorusConduit extends TileEntityConduit implements ITicka
 
             for (EntityPlayer player : players) {
                 if (this.pos.getDistance(new BlockPos(player)) <= (double)range) {
-                    player.addPotionEffect(new PotionEffect(Aquarius.AIR_SWIMMER, 260, 0, true, true));
+                    player.addPotionEffect(new PotionEffect(Aquarius.ATLANTEAN, 260, 0, true, true));
                 }
             }
 

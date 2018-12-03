@@ -28,7 +28,7 @@ public class Aquarius implements BlockAdder, ItemAdder, EntityTypeAdder, MobEffe
     public static final Item PRISMARINE_ROD = new Item(new Item.Builder().group(ItemGroup.MISC));
     public static final Item HOOKSHOT = new ItemHookshot(new Item.Builder().group(ItemGroup.TOOLS));
     public static EntityType HOOKSHOT_ENTITY;
-    public static Potion AIR_SWIMMER = new AquariusPotion(false, 0x1dd186).setIcon(9, 0).setBeneficial();
+    public static Potion ATLANTEAN = new AquariusPotion(false, 0x1dd186).setIcon(9, 0).setBeneficial();
     public static TileEntityType<TileEntityChorusConduit> CHORUS_CONDUIT_TE;
 
     @Override
@@ -51,7 +51,7 @@ public class Aquarius implements BlockAdder, ItemAdder, EntityTypeAdder, MobEffe
 
     @Override
     public void registerMobEffects() {
-        Potion.REGISTRY.register(31, new ResourceLocation("aquarius:air_swimmer"), AIR_SWIMMER);
+        Potion.REGISTRY.register(31, new ResourceLocation("aquarius:atlantean"), ATLANTEAN);
     }
 
     @Override
