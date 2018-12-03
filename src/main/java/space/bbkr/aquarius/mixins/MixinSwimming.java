@@ -37,12 +37,18 @@ public abstract class MixinSwimming extends EntityLivingBase {
 
     @Override
     public boolean canSwim() {
-        return (this.eyesInWater && this.isInWater()) || this.isPotionActive(Aquarius.AIR_SWIMMER);
+        return (this.eyesInWater && this.isInWater()) || this.isPotionActive(Aquarius.ATLANTEAN);
+    }
+
+    @Override
+    public boolean isWet() {
+        if (this.isPotionActive(Aquarius.ATLANTEAN)) return true;
+        return super.isWet();
     }
 
     @Inject(method = "updateSwimming", at = @At("TAIL"))
     public void updateAirSwimming(CallbackInfo ci) {
-        if (this.isPotionActive(Aquarius.AIR_SWIMMER)) {
+        if (this.isPotionActive(Aquarius.ATLANTEAN)) {
             this.setSwimming(this.isSprinting() && !this.isPassenger());
             this.inWater = this.isSwimming();
             if (this.isSwimming()) {
